@@ -5,20 +5,20 @@ import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
 import static org.junit.Assert.*;
 
-class IsItFriday {
+/*class IsItFriday {
   static String isItFriday(String today) {
     if (today.equals("Friday")) {
       return "TGIF!";
     }
     return "Nope";
   }
-}
+}*/
 
 public class Step_definitions {
   private String today;
   private String actualAnswer;
 
-  @Given("^today is Sunday$")
+  @Given("^today is \"([^\"]*)\"$")
   public void today_is_Sunday() {
     this.today = "Sunday";
   }
