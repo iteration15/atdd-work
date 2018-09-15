@@ -1,12 +1,16 @@
 module FridayStepHelper
   def is_it_friday?(day)
-    "Nope"
+    if day == 'Friday'
+      'TGIF'
+    else
+      'Nope'
+    end
   end
 end
 World FridayStepHelper
 
-Given("today is Sunday") do
-  @today = 'Sunday'
+Given("today is {string}") do |given_day|
+  @today = given_day
 end
 
 When("I ask whether it's Friday yet") do
