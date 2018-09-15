@@ -7,6 +7,9 @@ import static org.junit.Assert.*;
 
 class IsItFriday {
   static String isItFriday(String today) {
+    if (today.equals("Friday")) {
+      return "TGIF!";
+    }
     return "Nope";
   }
 }
@@ -28,5 +31,10 @@ public class Step_definitions {
   @Then("^I should be told \"([^\"]*)\"$")
   public void i_should_be_told(String expectedAnswer) {
     assertEquals(expectedAnswer, actualAnswer);
+  }
+
+  @Given("^today is Friday$")
+  public void today_is_Friday() {
+    this.today = "Friday";
   }
 }
